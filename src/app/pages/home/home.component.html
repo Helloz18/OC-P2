@@ -5,8 +5,11 @@
     <li *ngFor="let o of olympics$ | async">{{o.country}}</li>
 </ul>
     <ngx-charts-pie-chart
-      [results]="olympics$"
+      [results]="pie"
       [legend]="true"
+      [labels]="true"
+      [legendTitle]="title"
       [explodeSlices]="false"
       [doughnut]="false">
     </ngx-charts-pie-chart>
+    
