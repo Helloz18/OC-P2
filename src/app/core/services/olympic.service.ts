@@ -11,6 +11,8 @@ export class OlympicService {
   private olympicUrl = './assets/mock/olympic.json';
   private olympics$ = new BehaviorSubject<Olympic[] | null>(null);
 
+  countryData: any;
+
   constructor(private http: HttpClient) {}
 
   loadInitialData() {
@@ -28,5 +30,15 @@ export class OlympicService {
 
   getOlympics() {
     return this.olympics$.asObservable();
+  }
+
+  getOlympicsByCountry(name: string) {
+    this.getOlympics().subscribe({
+      next: data => {
+        if(data != null) {
+          this.countryData = data.find((olympic) => olympic.country === name);
+        }
+      }
+    })
   }
 }
