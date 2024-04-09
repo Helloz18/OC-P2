@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ScaleType } from '@swimlane/ngx-charts';
 import { MyLineData, Serie } from 'src/app/core/models/MyLineData';
-import { Olympic } from 'src/app/core/models/Olympic';
 import { Participation } from 'src/app/core/models/Participation';
 import { OlympicService } from 'src/app/core/services/olympic.service';
 
@@ -29,7 +29,12 @@ export class CountryComponent implements OnInit {
   yScaleMin: number = 0;
   yScaleMax: number = 0;
 
-
+  colorScheme = {   
+    domain: ['#007b80'], 
+    group: ScaleType.Ordinal, 
+    selectable: true, 
+    name: 'Customer Usage', 
+  };
   constructor( private olympicService: OlympicService, private route: ActivatedRoute) {
    }
 

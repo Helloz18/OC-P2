@@ -1,24 +1,36 @@
-<a routerLink=""><span class='title'>Home</span></a>
+<a routerLink=""><span class="title">Home</span></a>
 <hr />
 
 <div class="column">
-<div class="title">{{countryData[0].name}}</div>
-<div class="line">
-    <div class="subtitle">Number of Entries<br><span class="boldInfo">{{countryData[0].series.length}}</span></div>
-  <div class="subtitle">Total number medals<br><span class="boldInfo">{{totalMedals}}</span></div>
-  <div class="subtitle">Total number of athletes<br><span class="boldInfo">{{totalAthletes}}</span></div>
+  <div class="title">{{ countryData[0].name }}</div>
+  <div class="line">
+    <div class="subtitle">
+      Number of Entries<br /><span class="boldInfo">{{
+        countryData[0].series.length
+      }}</span>
+    </div>
+    <div class="subtitle">
+      Total number medals<br /><span class="boldInfo">{{ totalMedals }}</span>
+    </div>
+    <div class="subtitle">
+      Total number of athletes<br /><span class="boldInfo">{{
+        totalAthletes
+      }}</span>
+    </div>
+  </div>
+  <ngx-charts-line-chart
+    [view]="view"
+    [results]="countryData"
+    [scheme]="colorScheme"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    [yScaleMin]="yScaleMin"
+    [yScaleMax]="yScaleMax"
+    class="graph"
+  >
+  </ngx-charts-line-chart>
 </div>
-<ngx-charts-line-chart
-[view]="view"
-[results]="countryData"
-[xAxis]="showXAxis"
-[yAxis]="showYAxis"
-[showXAxisLabel]="showXAxisLabel"
-[showYAxisLabel]="showYAxisLabel"
-[xAxisLabel]="xAxisLabel"
-[yAxisLabel]="yAxisLabel"
-[yScaleMin]="yScaleMin"
-[yScaleMax]="yScaleMax"
-  class="graph"
->
-</ngx-charts-line-chart>
