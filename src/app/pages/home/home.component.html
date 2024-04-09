@@ -1,15 +1,20 @@
 <h2>Olympic games app</h2>
 <hr />
-<!-- <p>{{ (olympics$ | async) }}</p> -->
-<ul>
-    <li *ngFor="let o of olympics$ | async">{{o.country}}</li>
-</ul>
+
+<div class="column">
+<div class="title">{{title}}</div>
+<div class="line">
+  <div class="subtitle">Number of JO<br><span class="boldInfo">5</span></div>
+  <div class="subtitle">Number of Countries<br><span class="boldInfo">10</span></div>
+</div>
     <ngx-charts-pie-chart
       [results]="pie"
-      [legend]="true"
+      [legend]="false"
       [labels]="true"
       [legendTitle]="title"
       [explodeSlices]="false"
-      [doughnut]="false">
+      [doughnut]="false"
+      >
+      <!-- [tooltipText]="image" -->
     </ngx-charts-pie-chart>
-    
+  </div>
