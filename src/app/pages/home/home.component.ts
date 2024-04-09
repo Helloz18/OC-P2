@@ -1,4 +1,6 @@
+import { HttpEvent, HttpEventType } from '@angular/common/http';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { MyPieData } from 'src/app/core/models/MyPieData';
 import { Olympic } from 'src/app/core/models/Olympic';
@@ -15,7 +17,7 @@ export class HomeComponent implements OnInit {
   title:string =  "Medals per country";
 
 
-  constructor(private olympicService: OlympicService) {}
+  constructor(private olympicService: OlympicService, private router: Router) {}
 
   ngOnInit(): void {
     this.olympics$ = this.olympicService.getOlympics();
@@ -40,4 +42,7 @@ export class HomeComponent implements OnInit {
     
   }
 
+  onCountrySelected(event : HttpEventType) {
+    this.router.navigateByUrl('country/'+JSON.parse(JSON.stringify(event)).name);
+  }
 }
