@@ -34,3 +34,13 @@ body {
   a {
     text-decoration: none;
   }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.line {
+    display: flex;
+}
