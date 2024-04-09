@@ -1,6 +1,6 @@
-import { HttpEvent, HttpEventType } from '@angular/common/http';
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { HttpEventType } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { MyPieData } from 'src/app/core/models/MyPieData';
 import { Olympic } from 'src/app/core/models/Olympic';
@@ -23,9 +23,6 @@ export class HomeComponent implements OnInit {
     this.olympics$ = this.olympicService.getOlympics();
     this.olympics$.subscribe({
       next: data => {
-        console.log(data);
-        //utiliser map
-        console.log(this.pie)
         this.pie = data?.map(d => {
           return {
             name: d.country,
@@ -35,7 +32,6 @@ export class HomeComponent implements OnInit {
       }, error: () => {
 
       }, complete: () => {
-        console.log(this.pie)
 
       }
     });
@@ -43,6 +39,6 @@ export class HomeComponent implements OnInit {
   }
 
   onCountrySelected(event : HttpEventType) {
-    this.router.navigateByUrl('country/'+JSON.parse(JSON.stringify(event)).name);
+    this.router.navigateByUrl('country/?countryName='+JSON.parse(JSON.stringify(event)).name);
   }
 }
