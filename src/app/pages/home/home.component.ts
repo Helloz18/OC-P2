@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { MyPieData } from 'src/app/core/models/MyPieData';
 import { Olympic } from 'src/app/core/models/Olympic';
-import { PieData } from 'src/app/core/models/PieData';
 import { OlympicService } from 'src/app/core/services/olympic.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
 })
 export class HomeComponent implements OnInit {
   public olympics$: Observable<Olympic[] | null> = of(null);
-  pie: PieData[] | undefined = [];
+  pie: MyPieData[] | undefined = [];
   title:string =  "Medals per country";
 
 
