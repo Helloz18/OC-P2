@@ -2,22 +2,26 @@
 <hr />
 
 <div class="column">
-<div class="title">{{title}}</div>
-<div class="line">
-  <div class="subtitle">Number of JO<br><span class="boldInfo">5</span></div>
-  <div class="subtitle">Number of Countries<br><span class="boldInfo">10</span></div>
-</div>
-    <ngx-charts-pie-chart
-      [results]="pie"
-      [legend]="false"
-      [labels]="true"
-      [legendTitle]="title"
-      [explodeSlices]="false"
-      [doughnut]="false"
-      (select)="onCountrySelected($event)"
-      >
-     
-      <!-- [tooltipText]="image" -->
-    </ngx-charts-pie-chart>
-
+  <div class="title">{{ title }}</div>
+  <div class="line">
+    <div class="subtitle">
+      Number of JOs<br /><span class="boldInfo">{{ numberOfJOs }}</span>
+    </div>
+    <div class="subtitle">
+      Number of Countries<br /><span class="boldInfo">{{
+        numberOfCountries
+      }}</span>
+    </div>
   </div>
+  <ngx-charts-pie-chart
+    [results]="pie"
+    [view]="[700,400]"
+    [legend]="false"
+    [labels]="true"
+    [legendTitle]="title"
+    [explodeSlices]="false"
+    [doughnut]="false"
+    (select)="onCountrySelected($event)"
+  >
+  </ngx-charts-pie-chart>
+</div>
