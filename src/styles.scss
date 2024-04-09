@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    margin:0;
   
   }
   .ngx-charts-tooltip-content.type-tooltip {
@@ -43,4 +44,19 @@ body {
 }
 .line {
     display: flex;
+}
+.ngx-charts text { 
+    fill: grey; 
+    font-weight: 100;
+    font-size: x-large;
+}
+.ngx-charts text.ng-star-inserted {
+    fill: black;
+    font-weight: 100;
+    font-size:smaller;
+}
+.pie-label.animation {
+    fill: black;
+    font-weight: 100;
+    font-size:larger;
 }
