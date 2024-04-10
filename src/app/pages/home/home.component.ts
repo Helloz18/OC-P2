@@ -1,7 +1,7 @@
 import { HttpEventType } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, of, toArray } from 'rxjs';
+import { Observable, Subscription, of, toArray } from 'rxjs';
 import { MyPieData } from 'src/app/core/models/MyPieData';
 import { Olympic } from 'src/app/core/models/Olympic';
 import { OlympicService } from 'src/app/core/services/olympic.service';
@@ -11,20 +11,22 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
+
+  private dataSub!: Subscription;
   public olympics$: Observable<Olympic[] | null> = of(null);
   pie: MyPieData[] | undefined = [];
   title: string = 'Medals per country';
   numberOfJOs: number = 0;
   numberOfCountries: number = 0;
-  view: [number, number] = [700, 400];
   message: string = '';
 
   constructor(private olympicService: OlympicService, private router: Router) {}
 
+
   ngOnInit(): void {
     this.olympics$ = this.olympicService.getOlympics();
-    this.olympics$.subscribe({
+    this.dataSub = this.olympics$.subscribe({
       next: (data) => {
         if (data == null) {
           this.message = 'An error occured while fetching data.';
@@ -55,8 +57,9 @@ export class HomeComponent implements OnInit {
           this.numberOfCountries = Array.from(new Set(countries)).length;
         }
       },
-      error: () => {},
-      complete: () => {},
+      error: (error) => {
+        this.message = error.message;
+      }
     });
   }
 
@@ -64,5 +67,9 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl(
       'country/?countryName=' + JSON.parse(JSON.stringify(event)).name
     );
+  }
+
+  ngOnDestroy(): void {
+    this.dataSub.unsubscribe();
   }
 }

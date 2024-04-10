@@ -34,15 +34,15 @@ export class OlympicService {
 
   /**
    * This method should be updated once we will have the backend to make a proper get by name method.
-   * @param name 
+   * @param name
    */
   getOlympicsByCountry(name: string) {
     this.getOlympics().subscribe({
-      next: data => {
-        if(data != null) {
+      next: (data) => {
+        if (data != null) {
           this.countryData = data.find((olympic) => olympic.country === name);
         }
-      }
-    })
+      },
+    });
   }
 }

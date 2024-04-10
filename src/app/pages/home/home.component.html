@@ -1,30 +1,30 @@
 <div class="screen">
-<h2>Olympic games app</h2>
-<hr />
-<div *ngIf="message" class='warning'>{{message}}</div>
-<div *ngIf="message==''" class="column">
-  <div class="title">{{ title }}</div>
-  <div class="line">
-    <div class="subtitle">
-      Number of JOs<br /><span class="boldInfo">{{ numberOfJOs }}</span>
+  <h2>Olympic games app</h2>
+  <hr />
+  <div *ngIf="message" class="warning">{{ message }}</div>
+  <div *ngIf="message == ''" class="column">
+    <div class="title">{{ title }}</div>
+    <div class="line">
+      <div class="subtitle">
+        Number of JOs<br /><span class="boldInfo">{{ numberOfJOs }}</span>
+      </div>
+      <div class="subtitle">
+        Number of Countries<br /><span class="boldInfo">{{
+          numberOfCountries
+        }}</span>
+      </div>
     </div>
-    <div class="subtitle">
-      Number of Countries<br /><span class="boldInfo">{{
-        numberOfCountries
-      }}</span>
+    <div class="viewGraph">
+      <ngx-charts-pie-chart
+        [results]="pie"
+        [legend]="false"
+        [labels]="true"
+        [legendTitle]="title"
+        [explodeSlices]="false"
+        [doughnut]="false"
+        (select)="onCountrySelected($event)"
+      >
+      </ngx-charts-pie-chart>
     </div>
   </div>
-  <div class="viewGraph">
-  <ngx-charts-pie-chart
-    [results]="pie"
-    [legend]="false"
-    [labels]="true"
-    [legendTitle]="title"
-    [explodeSlices]="false"
-    [doughnut]="false"
-    (select)="onCountrySelected($event)"
-  >
-  </ngx-charts-pie-chart>
-</div>
-</div>
 </div>
