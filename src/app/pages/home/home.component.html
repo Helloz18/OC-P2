@@ -14,9 +14,9 @@
       }}</span>
     </div>
   </div>
+  <div class="viewGraph">
   <ngx-charts-pie-chart
     [results]="pie"
-    [view]="view"
     [legend]="false"
     [labels]="true"
     [legendTitle]="title"
@@ -25,5 +25,6 @@
     (select)="onCountrySelected($event)"
   >
   </ngx-charts-pie-chart>
+</div>
 </div>
 </div>
