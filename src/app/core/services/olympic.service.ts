@@ -32,6 +32,10 @@ export class OlympicService {
     return this.olympics$.asObservable();
   }
 
+  /**
+   * This method should be updated once we will have the backend to make a proper get by name method.
+   * @param name 
+   */
   getOlympicsByCountry(name: string) {
     this.getOlympics().subscribe({
       next: data => {
