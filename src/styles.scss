@@ -3,8 +3,12 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   margin: 0;
 }
-.ngx-charts-tooltip-content.type-tooltip {
+
+ngx-tooltip-content.ngx-charts-tooltip-content.type-tooltip {
   background-color: #007b80 !important;
+  .tooltip-caret.position-top {
+    border-top-color: #007b80;
+  }
 }
 
 a {
@@ -31,6 +35,10 @@ a {
   padding: 5px 10px;
   text-align: center;
   margin: 10px;
+}
+
+.customTooltip {
+  padding: 5px;
 }
 
 //Media query for responsive design
