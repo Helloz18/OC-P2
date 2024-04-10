@@ -1,7 +1,8 @@
+<div class="screen">
 <h2>Olympic games app</h2>
 <hr />
-
-<div class="column">
+<div *ngIf="message" class='warning'>{{message}}</div>
+<div *ngIf="message==''" class="column">
   <div class="title">{{ title }}</div>
   <div class="line">
     <div class="subtitle">
@@ -15,7 +16,7 @@
   </div>
   <ngx-charts-pie-chart
     [results]="pie"
-    [view]="[700,400]"
+    [view]="view"
     [legend]="false"
     [labels]="true"
     [legendTitle]="title"
@@ -24,4 +25,5 @@
     (select)="onCountrySelected($event)"
   >
   </ngx-charts-pie-chart>
+</div>
 </div>
