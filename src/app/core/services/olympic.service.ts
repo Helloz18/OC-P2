@@ -40,7 +40,6 @@ export class OlympicService {
       next: (data) => {
         if (data != null) {
           this.countryData = data.find((olympic) => olympic.country === name);
-          console.log(this.countryData)
         }
       },
     });
