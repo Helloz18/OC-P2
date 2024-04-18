@@ -11,7 +11,7 @@ export class OlympicService {
   private olympicUrl = './assets/mock/olympic.json';
   private olympics$ = new BehaviorSubject<Olympic[] | null>(null);
 
-  countryData: any;
+  countryData!: Olympic | undefined;
 
   constructor(private http: HttpClient) {}
 
@@ -19,7 +19,6 @@ export class OlympicService {
     return this.http.get<Olympic[]>(this.olympicUrl).pipe(
       tap((value) => this.olympics$.next(value)),
       catchError((error, caught) => {
-        // TODO: improve error handling
         console.error(error);
         // can be useful to end loading state and let the user know something went wrong
         this.olympics$.next(null);
@@ -41,6 +40,7 @@ export class OlympicService {
       next: (data) => {
         if (data != null) {
           this.countryData = data.find((olympic) => olympic.country === name);
+          console.log(this.countryData)
         }
       },
     });

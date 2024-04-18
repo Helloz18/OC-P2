@@ -44,7 +44,7 @@ export class CountryComponent implements OnInit {
       this.olympicService.getOlympicsByCountry(countryName);
 
       //format values to match series interface and get total medals and athletes
-      this.olympicService.countryData.participations.forEach(
+      this.olympicService.countryData!.participations.forEach(
         (p: Participation) => {
           this.series.push({ name: p.year.toString(), value: p.medalsCount });
           this.totalMedals = this.totalMedals + p.medalsCount;
