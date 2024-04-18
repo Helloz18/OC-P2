@@ -1,1 +1,234 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+}
+
+ngx-tooltip-content.ngx-charts-tooltip-content.type-tooltip {
+  background-color: #007b80 !important;
+  .tooltip-caret.position-top {
+    border-top-color: #007b80;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.line {
+  display: flex;
+}
+
+.warning {
+  background-color: rgb(253, 92, 92);
+  color: white;
+  border: 1px solid rgb(253, 92, 92);
+  border-radius: 5px;
+  font-weight: 100;
+  font-size: x-large;
+  padding: 5px 10px;
+  text-align: center;
+  margin: 10px;
+}
+
+.customTooltip {
+  padding: 5px;
+}
+
+//Media query for responsive design
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  /* Mobile Variables */
+  .viewGraph {
+    width: 300px;
+    height: 200px;
+  }
+  .ngx-charts text {
+    fill: grey;
+    font-weight: 100;
+    font-size: medium;
+  }
+  .ngx-charts text.ng-star-inserted {
+    fill: black;
+    font-weight: 100;
+    font-size: smaller;
+  }
+  .pie-label.animation {
+    fill: black;
+    font-weight: 100;
+    font-size: medium;
+  }
+  .title {
+    background-color: #007b80;
+    color: white;
+    border: solid 1 px #007b80;
+    border-radius: 5px;
+    font-weight: 100;
+    font-size: medium;
+    padding: 5px 10px;
+    text-align: center;
+    margin: 10px;
+  }
+  .subtitle {
+    border: solid 2px #007b80;
+    border-radius: 5px;
+    font-weight: 100;
+    font-size: small;
+    color: grey;
+    padding: 5px 10px;
+    text-align: center;
+    margin: 20px;
+  }
+  .boldInfo {
+    font-weight: 900;
+    color: black;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Mobile Variables */
+  .viewGraph {
+    width: 700px;
+    height: 400px;
+  }
+  .ngx-charts text {
+    fill: grey;
+    font-weight: 100;
+    font-size: x-large;
+  }
+  .ngx-charts text.ng-star-inserted {
+    fill: black;
+    font-weight: 100;
+    font-size: smaller;
+  }
+  .pie-label.animation {
+    fill: black;
+    font-weight: 100;
+    font-size: larger;
+  }
+  .title {
+    background-color: #007b80;
+    color: white;
+    border: solid 1 px #007b80;
+    border-radius: 5px;
+    font-weight: 100;
+    font-size: x-large;
+    padding: 5px 10px;
+    text-align: center;
+    margin: 10px;
+  }
+  .subtitle {
+    border: solid 2px #007b80;
+    border-radius: 5px;
+    font-weight: 100;
+    font-size: medium;
+    color: grey;
+    padding: 5px 10px;
+    text-align: center;
+    margin: 20px;
+  }
+  .boldInfo {
+    font-weight: 900;
+    color: black;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  /* Mobile Variables */
+  .viewGraph {
+    width: 700px;
+    height: 400px;
+  }
+  .ngx-charts text {
+    fill: grey;
+    font-weight: 100;
+    font-size: x-large;
+  }
+  .ngx-charts text.ng-star-inserted {
+    fill: black;
+    font-weight: 100;
+    font-size: smaller;
+  }
+  .pie-label.animation {
+    fill: black;
+    font-weight: 100;
+    font-size: larger;
+  }
+  .title {
+    background-color: #007b80;
+    color: white;
+    border: solid 1 px #007b80;
+    border-radius: 5px;
+    font-weight: 100;
+    font-size: x-large;
+    padding: 5px 10px;
+    text-align: center;
+    margin: 10px;
+  }
+  .subtitle {
+    border: solid 2px #007b80;
+    border-radius: 5px;
+    font-weight: 100;
+    font-size: medium;
+    color: grey;
+    padding: 5px 10px;
+    text-align: center;
+    margin: 20px;
+  }
+  .boldInfo {
+    font-weight: 900;
+    color: black;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .viewGraph {
+    width: 700px;
+    height: 400px;
+  }
+  .ngx-charts text {
+    fill: grey;
+    font-weight: 100;
+    font-size: x-large;
+  }
+  .ngx-charts text.ng-star-inserted {
+    fill: black;
+    font-weight: 100;
+    font-size: smaller;
+  }
+  .pie-label.animation {
+    fill: black;
+    font-weight: 100;
+    font-size: larger;
+  }
+  .title {
+    background-color: #007b80;
+    color: white;
+    border: solid 1 px #007b80;
+    border-radius: 5px;
+    font-weight: 100;
+    font-size: x-large;
+    padding: 5px 10px;
+    text-align: center;
+    margin: 10px;
+  }
+  .subtitle {
+    border: solid 2px #007b80;
+    border-radius: 5px;
+    font-weight: 100;
+    font-size: medium;
+    color: grey;
+    padding: 5px 10px;
+    text-align: center;
+    margin: 20px;
+  }
+  .boldInfo {
+    font-weight: 900;
+    color: black;
+  }
+}
